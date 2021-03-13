@@ -10048,7 +10048,7 @@ img::-moz-selection {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background-color: #bfccda;
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -10081,11 +10081,14 @@ img::-moz-selection {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
+    /* padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border: none;
     background-color: transparent;
-    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out; */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #212529;
   }
   #mainNav .navbar-brand {
     font-size: 1.5em;
