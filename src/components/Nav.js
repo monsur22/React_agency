@@ -8,7 +8,7 @@ import {
 class Nav extends Component {
   render() {
     return(
-     
+
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
                 {/* <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="" /></a> */}
@@ -24,6 +24,9 @@ class Nav extends Component {
                         <li class="nav-item"><Link class="nav-link js-scroll-trigger" to="/portfolio">Portfolio</Link></li>
                         <li class="nav-item"><Link class="nav-link js-scroll-trigger" to="/about">About</Link></li>
                         <li class="nav-item"><Link class="nav-link js-scroll-trigger" to="/team">Team</Link></li>
+                        <li class="nav-item"><Link class="nav-link js-scroll-trigger" to="/contact">Contact</Link></li>
+                        <li class="nav-item"><Link class="nav-link js-scroll-trigger" to="/add">Add</Link></li>
+                        <li class="nav-item"><Link class="nav-link js-scroll-trigger" to="/list">List</Link></li>
                         <li class="nav-item"><Link class="nav-link js-scroll-trigger" to="/contact">Contact</Link></li>
                     </ul>
                 </div>

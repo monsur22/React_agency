@@ -9,6 +9,8 @@ import Team from './components/Team';
 import Contact from './components/Contact';
 import About from './components/About';
 import Footer from './components/Footer';
+import Add from './components/Add';
+import List from './components/List';
 
 import {
   BrowserRouter as Router,
@@ -29,6 +31,9 @@ function App() {
           <Route path="/about"><About /></Route>
           <Route path="/team"><Team /></Route>
           <Route path="/contact"><Contact /></Route>
+          <Route path="/add"><Add /></Route>
+          <Route path="/add"><Add /></Route>
+          <Route path="/list"><List /></Route>
         </Switch>
       <Footer />
     </div>

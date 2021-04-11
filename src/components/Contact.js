@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-class Contact extends Component {
+class Add extends Component {
   render() {
     return(
 
@@ -45,9 +45,9 @@ class Contact extends Component {
           </form>
       </div>
   </section>
- 
+
 
     );
   }
 }
-export default Contact;
+export default Add;
