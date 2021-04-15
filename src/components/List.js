@@ -9,7 +9,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-export default class PersonList extends React.Component {
+export default class List extends React.Component {
   state = {
     persons: []
   }
@@ -24,7 +24,15 @@ export default class PersonList extends React.Component {
 
   }
   removeData(id) {
-    console.log(id);
+    // console.log(id);
+
+    axios.delete('http://localhost:8000/api/service/delete/' + id)
+            .then((res) => {
+                console.log(id)
+                this.componentDidMount()
+            }).catch((error) => {
+                console.log(error)
+            })
   }
 
   render() {
@@ -49,9 +57,7 @@ export default class PersonList extends React.Component {
               <td>{repo.title}</td>
               <td><img style={{width:100}} src={"http://localhost:8000/"+repo.img}></img></td>
               <td>
-                <Link className="edit-link" to={  "/Edit/"+repo.id }>
-                  Edit
-                </Link>
+                <Link className="edit-link" to={  "/service/edit/"+repo.id }>Edit</Link>
                 <button size="sm" variant="danger" onClick={() => this.removeData(repo.id)}>Delete</button>
 
 

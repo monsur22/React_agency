@@ -11,6 +11,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Add from './components/Add';
 import List from './components/List';
+import Edit from './components/Edit';
 
 import {
   BrowserRouter as Router,
@@ -34,6 +35,8 @@ function App() {
           <Route path="/add"><Add /></Route>
           <Route path="/add"><Add /></Route>
           <Route path="/list"><List /></Route>
+          <Route exact path="/service/edit/:id"><Edit /></Route>
+          {/* <Route path="/service/edit/:id" component={Edit} exact={true}></Route> */}
         </Switch>
       <Footer />
     </div>
