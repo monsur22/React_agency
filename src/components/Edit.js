@@ -16,14 +16,15 @@ class Edit extends Component {
 
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-
-    // this.onSubmit = this.onSubmit.bind(this);
+    this.onChangeImg = this.onChangeImg.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
     // State
     this.state = {
-      id: this.props.match.params.id,
+        id: this.props.match.params.id,
         title: '',
-        description: ''
+        description: '',
+        img: null,
 
     }
   }
@@ -58,7 +59,11 @@ class Edit extends Component {
     this.setState({ description: e.target.value })
   }
 
+  onChangeImg(e) {
 
+    this.setState({ img: e.target.files[0],loaded: 0, })
+
+}
 
   // onSubmit(e) {
   //   e.preventDefault()
@@ -80,7 +85,20 @@ class Edit extends Component {
   //   // Redirect to Student List
   //   this.props.history.push('/List')
   // }
+  onSubmit(e) {
+    e.preventDefault()
+    const data = new FormData()
 
+    data.append('title', this.state.title)
+    data.append('description', this.state.description)
+    data.append('img', this.state.img)
+
+    axios.post('http://localhost:8000/api/service/update/'+this.props.match.params.id, data)
+      .then(res => console.log(res.data));
+
+    // this.setState({ title: '', description: '',img: ''})
+    this.props.history.push('/list')
+  }
 
   render() {
     // console.log(this.props.match.params.id);
@@ -88,7 +106,7 @@ class Edit extends Component {
 <section class="" id="">
       <div class="container">
           <div class="text-center">
-              <h2 class="section-heading text-uppercase">Add</h2>
+              <h2 class="section-heading text-uppercase">Edit</h2>
           </div>
           <form id="contactForm" name="sentMessage" novalidate="novalidate" onSubmit={this.onSubmit}>
             <div class="form-group">
